@@ -2,7 +2,6 @@ package com.poc.gateway.config
 
 import org.springframework.http.HttpMethod
 import org.springframework.http.HttpMethod.GET
-import org.springframework.http.HttpMethod.POST
 
 //TODO : Migrate to persistence solution
 enum class Backend(

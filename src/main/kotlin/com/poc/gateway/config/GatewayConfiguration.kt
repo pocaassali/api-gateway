@@ -1,4 +1,5 @@
 package com.poc.gateway.config
+
 import com.poc.gateway.filter.AuthFilter
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -27,7 +28,6 @@ class GatewayConfiguration(
                     }
                 }
 
-                // Protected Endpoints
                 routes.route("${backend.id}-protected") {
                     it.path(backend.path)
                         .filters { f -> f.filters(authFilter) }
