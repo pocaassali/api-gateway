@@ -1,0 +1,10 @@
+spring :
+  application :
+    name: api-gateway
+  data:
+    redis:
+      host: localhost
+      port: 6379
+jwt:
+  secret: Xv1qj8+0Vd6k2ZGk7RkB0TzJ4GqWJXVy9DfV4bNvl6Y=
+
