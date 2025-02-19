@@ -5,18 +5,16 @@ import org.springframework.http.HttpMethod.GET
 
 //TODO : Migrate to persistence solution
 enum class Backend(
-    val id : String,
-    val path : String,
-    val uri : String,
-    val publicEndpoints: Map<HttpMethod,Set<String>>,
+    val id: String,
+    val path: String,
+    val uri: String,
+    val publicEndpoints: Map<HttpMethod, Set<String>>,
 ) {
-    SERVICE_RESOURCE(
-        id = "resource",
-        path = "/svc/resources/**",
+    SERVICE_USERS(
+        id = "user",
+        path = "/svc/users/**",
         uri = "http://localhost:8081",
-        publicEndpoints = mapOf(
-            GET to setOf("/svc/resources/persons")
-        )
+        publicEndpoints = emptyMap()
     ),
     AUTH_SERVER(
         id = "auth",

@@ -15,14 +15,12 @@ class AuthFilter(
 ) : GatewayFilter {
 
     override fun filter(exchange: ServerWebExchange, chain: GatewayFilterChain): Mono<Void> {
-        println("AuthFilter filter")
         val request = exchange.request
 
         val sessionId = request.cookies["SESSION_ID"]?.firstOrNull()?.value
             ?: return this.onError(exchange, "Cookie session is missing !")
 
         val accessToken = jwtSessionService.getSession(sessionId)?.accessToken
-        println(accessToken)
 
         if (accessToken.isNullOrEmpty()) {
             return this.onError(exchange, "Access token is null or empty!")
