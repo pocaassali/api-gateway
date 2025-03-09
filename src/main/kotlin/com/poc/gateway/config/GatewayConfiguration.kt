@@ -1,8 +1,10 @@
 package com.poc.gateway.config
 
 import com.poc.gateway.filter.AuthFilter
+import com.poc.gateway.filter.ResponseLoggingFilter
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import org.springframework.cloud.gateway.filter.GlobalFilter
 import org.springframework.cloud.gateway.route.RouteLocator
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder
 import org.springframework.context.annotation.Bean
@@ -41,6 +43,11 @@ class GatewayConfiguration(
         }
     }
 
+    //DEBUG PURPOSES
+    /*@Bean
+    fun loggingFilter(): GlobalFilter {
+        return ResponseLoggingFilter()
+    }*/
 
     companion object {
         val LOGGER: Logger = LoggerFactory.getLogger(GatewayConfiguration::class.java)
